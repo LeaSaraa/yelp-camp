@@ -1,0 +1,30 @@
+<!-- header.ejs -->
+<%include partials/header%>
+
+<div class="container">
+  <header class="jumbotron container">
+    <div class="container">
+      <h1>Welcome To Kashmir</h1>
+      <p>Explore our handpicked sites from all over the Kashmir</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="/campgrounds/new/">Add New Camp</a>
+      </p>
+    </div>
+  </header>
+  <div class="row text-center" style="display: flex; flex-wrap: wrap">
+    <%campgrounds.forEach(function(data){%>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div class="thumbnail">
+        <img src="<%=data.image%>" alt="">
+        <div class="caption">
+          <h4><%=data.name%></h4>
+        </div>
+      </div>
+    </div>
+    <%});%>
+  </div>
+
+</div>
+
+<!-- footer.ejs -->
+<%include partials/footer%>
