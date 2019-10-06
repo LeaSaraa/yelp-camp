@@ -40,12 +40,14 @@ router.post("/login", passport.authenticate("local",
 }), function(req, res){
 });
 
-//logic route
+//logout route
 router.post("/logout", function(req, res){
   req.logout();
   res.redirect("/campgrounds");
 });
 
+
+//middleware
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
