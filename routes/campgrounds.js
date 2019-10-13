@@ -49,6 +49,12 @@ router.get("/:id", function(req, res){
   });
 });
 
+//EDIT CAMPGROUND
+router.get("/:id/edit", isLoggedIn, checkUserCampground, function(req, res){
+  //render edit template with that campground
+  res.render("campgrounds/edit", {campground: req.campground});
+});
+
 //middleware
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
